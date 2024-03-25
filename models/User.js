@@ -32,7 +32,8 @@ const UserSchema = new mongoose.Schema({
         maxlength: [20, 'Telephone number cannot be longer than 20 characters']
     },
     ImageURL: {
-        type: String
+        type: String,
+        default : 'https://drive.usercontent.google.com/download?id=1tSL3V_7PgOcyRY_oH0ksEEYrBphxOQzC&authuser=0'
     },
     resetPasswordToken: String,
     resetPasswordExpire: Date,
