@@ -29,21 +29,7 @@ const server = app.listen(
     'on ' + process.env.HOST + ':' + PORT
     )
 );
-const swaggerOptions = {
-    swaggerDefinition:{
-        openai:'3.0.0',
-        info:{
-            title:'Library API',
-            version: '1.0.0',
-            description:'Online Job-Fair'
-        },
-        servers:[
-            {
-                url: process.env.HOST + ':' + PORT + '/api/v1'
-            }
-        ]
-    }
-}
+
 process.on('unhandledRejection', (err, promise) => {
     console.log(`Error: ${err.message}`);
     server.close(() => process.exit(1));
