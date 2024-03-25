@@ -33,10 +33,10 @@ const JobofferSchema = new mongoose.Schema({
 });
 
 // Reverse populate with virtuals
-JobofferSchema.virtual('joboffer', {
-    ref: 'Joboffer',
+JobofferSchema.virtual('interviews', {
+    ref: 'interviews',
     localField: '_id',
-    foreignField: 'company',
+    foreignField: 'Joboffer',
     justOne: false
 });
 

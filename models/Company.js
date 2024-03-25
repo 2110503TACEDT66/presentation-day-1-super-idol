@@ -34,14 +34,6 @@ const CompanySchema = new mongoose.Schema({
     toObject: {virtuals: true}
 });
 
-// Reverse populate with virtuals
-CompanySchema.virtual('interviews', {
-    ref: 'Interview',
-    localField: '_id',
-    foreignField: 'company',
-    justOne: false
-});
-
 // Cascade delete interviews when a company is deleted
 CompanySchema.pre('deleteOne', {document: true, query: false},  async function(next) {
     console.log(`Interviews being removed from company ${this._id}`);

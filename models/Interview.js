@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 const InterviewSchema = new mongoose.Schema({
-    company: {
+    joboffer: {
         type: mongoose.Schema.ObjectId,
-        ref: 'Company',
+        ref: 'Joboffer',
         required: true
     },
     user: {
