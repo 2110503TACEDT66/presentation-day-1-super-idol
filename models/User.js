@@ -7,9 +7,6 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Please add a name']
     },
-    Image: {
-        type: String
-    },
     email: {
         type: String,
         required: [true, 'Please add an email'],
@@ -33,6 +30,9 @@ const UserSchema = new mongoose.Schema({
     telephone_number: {
         type: String,
         maxlength: [20, 'Telephone number cannot be longer than 20 characters']
+    },
+    ImageURL: {
+        type: String
     },
     resetPasswordToken: String,
     resetPasswordExpire: Date,

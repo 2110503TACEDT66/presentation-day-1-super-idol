@@ -2,7 +2,7 @@ const User = require('../models/User');
 const crypto = require('crypto');
 
 exports.register = async (req, res, next) => {
-    const {name, email, password, telephone_number, role} = req.body;
+    const {name, email, password, telephone_number, role, ImageURL} = req.body;
 
     try {
         const user = await User.create({
@@ -10,7 +10,8 @@ exports.register = async (req, res, next) => {
             email,
             password,
             telephone_number,
-            role
+            role,
+            ImageURL
         });
 
         sendTokenResponse(user, 200, res);

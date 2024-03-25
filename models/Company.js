@@ -27,7 +27,10 @@ const CompanySchema = new mongoose.Schema({
     telephone_number: {
         type: String,
         maxlength: [20, 'Telephone number cannot be longer than 20 characters']
-    }
+    },
+    ImageURL: {
+        type: String
+    },
 },
 {
     toJSON: {virtuals: true},
