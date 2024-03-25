@@ -1,7 +1,7 @@
 {
     "version":2,
     "name":"Online Job-Fair",
-    "build":[
+    "builds":[
         {
             "src":"server.js",
             "use":"@vercel/node"        
