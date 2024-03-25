@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 
 const JobofferSchema = new mongoose.Schema({
+    company: {
+        type: mongoose.Schema.ObjectId,
+        ref: 'Company',
+        required: true
+    },
     name: {
         type: String,
         required: [true, 'Please add a name'],
