@@ -1,6 +1,6 @@
 {
     "version":2,
-    "name":"Online Job-Fair",
+    "name":"Online-Job-Fair",
     "builds":[
         {
             "src":"server.js",
@@ -10,7 +10,7 @@
     "routes":[
         {
             "src":"/(.*)",
-            "dest":"server.js   "
+            "dest":"server.js"
         }
     ]
 }
