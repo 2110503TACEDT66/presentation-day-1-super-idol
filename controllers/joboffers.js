@@ -2,7 +2,10 @@ const Joboffer = require('../models/Joboffer');
 
 exports.getJoboffers = async (req, res, next) => {
     try {
-        const joboffers = await Joboffer.find();
+        const joboffers = await Joboffer.find().populate({
+            path: 'company',
+            select: 'name'
+        });
         res.status(200).json({success: true, data: joboffers});
     } catch (err) {
         res.status(400).json({success: false, message: err.message});
