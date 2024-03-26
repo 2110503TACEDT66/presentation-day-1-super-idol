@@ -9,11 +9,11 @@ exports.getInterviews = async (req, res, next) => {
         query = Interview.find({user: req.user.id}).populate(
             {
                 path: 'joboffer',
-                select: 'name description address telephone_number company'
-            },
-            {
-                path: 'joboffer.company',
-                select: 'name address telephone_number website description ImageURL'
+                select: 'name description company',
+                populate: {
+                    path: 'company',
+                    select: 'name'
+                }
             }
         );
     }else {
