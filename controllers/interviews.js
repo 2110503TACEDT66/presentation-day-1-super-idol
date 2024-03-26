@@ -10,6 +10,10 @@ exports.getInterviews = async (req, res, next) => {
             {
                 path: 'joboffer',
                 select: 'name description address telephone_number company'
+            },
+            {
+                path: 'joboffer.company',
+                select: 'name address telephone_number website description ImageURL'
             }
         );
     }else {
