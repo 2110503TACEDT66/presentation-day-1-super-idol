@@ -37,7 +37,12 @@ const CompanySchema = new mongoose.Schema({
     toJSON: {virtuals: true},
     toObject: {virtuals: true}
 });
-
+CompanySchema.virtual('joboffers', {
+    ref: 'joboffers',
+    localField: '_id',
+    foreignField: 'companies',
+    justOne: false
+});
 // Cascade delete interviews when a company is deleted
 CompanySchema.pre('deleteOne', {document: true, query: false},  async function(next) {
     console.log(`Interviews being removed from company ${this._id}`);
