@@ -20,7 +20,7 @@ exports.getInterviews = async (req, res, next) => {
         query = Interview.find().populate(
             {
                 path: 'joboffer',
-                select: 'name address telephone_number ',
+                select: 'name description company',
                 populate: {
                     path: 'company',
                     select: 'name'
