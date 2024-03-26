@@ -40,7 +40,7 @@ const CompanySchema = new mongoose.Schema({
 CompanySchema.virtual('joboffers', {
     ref: 'joboffers',
     localField: '_id',
-    foreignField: 'companies',
+    foreignField: 'company',
     justOne: false
 });
 // Cascade delete interviews when a company is deleted
