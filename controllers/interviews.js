@@ -9,7 +9,7 @@ exports.getInterviews = async (req, res, next) => {
         query = Interview.find({user: req.user.id}).populate(
             {
                 path: 'joboffer',
-                select: 'name address telephone_number '
+                select: 'name description address telephone_number company'
             }
         );
     }else {
