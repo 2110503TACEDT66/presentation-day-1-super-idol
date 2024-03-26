@@ -2,6 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const cookieParser = require('cookie-parser');
 const connectDB = require('./config/db');
+const cors = require('cors');
 
 dotenv.config({path: './config/config.env'});
 
@@ -16,6 +17,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors());
 
 app.use('/api/v1/companies', companies);
 app.use('/api/v1/interviews', interviews);
