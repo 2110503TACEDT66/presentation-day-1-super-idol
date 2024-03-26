@@ -59,7 +59,7 @@ exports.createInterview = async (req, res, next) => {
 exports.editInterview = async (req, res, next) => {
     if(req.user.role === 'admin') {
         try {
-            const date = new Date(req.body.date);
+            
             const interview = await Interview.findByIdAndUpdate(req.params.id, req.body, {
                 new: true,
                 runValidators: true
@@ -69,6 +69,7 @@ exports.editInterview = async (req, res, next) => {
             res.status(400).json({success: false, message: err.message});
         }   
     }else {
+        const date = new Date(req.body.date);
         if(date < new Date('2022-05-10T00:00:00.000Z') || date > new Date('2022-05-13T23:59:59.000Z')) {
             return res.status(400).json({success: false, message: 'Date is not in between 10-13 May 2022'});
         }
